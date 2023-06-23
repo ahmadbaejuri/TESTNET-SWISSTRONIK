@@ -1,0 +1,42 @@
+hello 
+ini tutorial untuk berpartisipasi di earlybird swisstronik 
+pertama Deploy Contract di http://remix.ethereum.org 
+ganti jaringan metamask anda ke sepolia testnet 
+isi dengan faucet silahkan cari di google dengan keyword "faucet sepolia testnet"
+setelah itu masukan command seperti ini :
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract Register {
+    string public github;
+    address public owner;
+    
+    struct Referral {
+        address referralAddress;
+        string referralString;
+    }
+    
+    Referral[] public referrals;
+    
+    constructor() {
+        github = "XiJinpinggg";
+        owner = 0xeC8dD93C481cBE0c8658f7673f16343a72xxxxx;
+    }
+    
+    function addReferral(address _referralAddress, string memory _referralString) external {
+        require(msg.sender == owner, "Only the owner can add referrals.");
+        referrals.push(Referral(_referralAddress, _referralString));
+    }
+    
+    function totalReferrals() public view returns (uint256) {
+        return referrals.length;
+    }
+}
+
+tutorial lengkapnya silahkan tonton video ini : https://www.tiktok.com/@airdropsultan.id/video/7247749157828431109
+
+NOTED : owner di ganti dengan address anda
+dan github di ganti dengan username github anda
+
+done
